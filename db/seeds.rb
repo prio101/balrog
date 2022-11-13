@@ -6,3 +6,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# creates Emplyment
+# it will also generate the Personal Datum set
+FactoryBot.create(:emplyment)
