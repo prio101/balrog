@@ -30,8 +30,13 @@
             <%= form.text_field :phone_number, class: 'font-semibold text-base text-gray-700 font-thin rounded-md' %>
           </div>
 
-          <%= form.submit "Save", class: "cursor-pointer my-2 p-3 text-white font-bold rounded-md bg-gradient-to-r from-sky-400 to-blue-500" %>
+          <%= form.submit "Save", class: "cursor-pointer my-2 p-3 w-40 text-white font-bold rounded-md bg-gradient-to-r from-sky-400 to-blue-500" %>
         <% end %>
+
+        <button
+          class="cursor-pointer my-2 p-3 w-40 text-white font-bold rounded-md bg-gradient-to-r from-red-400 to-pink-500"
+          data-controller='form'
+          data-action="click->form#hideModal">Cancel</button>
     </div>
 
   </div>
