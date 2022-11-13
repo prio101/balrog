@@ -64,6 +64,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'faker'
+  gem 'rubocop'
 end
 
 group :development do
