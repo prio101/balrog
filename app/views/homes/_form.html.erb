@@ -1,0 +1,40 @@
+<div class="flex flex-1 flex-col">
+  <div class="absolute top-40 left-32 right-32">
+
+    <div class="p-10 bg-white rounded-md border border-slate-300 flex flex-col">
+        <%= form_with model: @data, url: '/homes' do |form| %>
+          <% form.hidden_field :step, value: :personal_data %>
+
+          <div class="flex flex-1 flex-col justify-center content-center m-1">
+            <%= form.label :first_name, class: 'font-semibold text-base text-gray-700 font-thin' %>
+            <%= form.text_field :first_name, class: 'font-semibold text-base text-gray-700 font-thin rounded-md' %>
+          </div>
+
+          <div class="flex flex-1 flex-col justify-center content-center m-1">
+            <%= form.label :last_name, class: 'font-semibold text-base text-gray-700 font-thin' %>
+            <%= form.text_field :last_name, class: 'font-semibold text-base text-gray-700 font-thin rounded-md' %>
+          </div>
+
+          <div class="flex flex-1 flex-col justify-center content-center m-1">
+            <%= form.label :nickname, class: 'font-semibold text-base text-gray-700 font-thin' %>
+            <%= form.text_field :nickname, class: 'font-semibold text-base text-gray-700 font-thin rounded-md' %>
+          </div>
+
+          <div class="flex flex-1 flex-col justify-center content-center m-1">
+            <%= form.label :email_address, class: 'font-semibold text-base text-gray-700 font-thin' %>
+            <%= form.text_field :email_address, class: 'font-semibold text-base text-gray-700 font-thin rounded-md' %>
+          </div>
+
+          <div class="flex flex-1 flex-col justify-center content-center m-1">
+            <%= form.label :phone_number, class: 'font-semibold text-base text-gray-700 font-thin' %>
+            <%= form.text_field :phone_number, class: 'font-semibold text-base text-gray-700 font-thin rounded-md' %>
+          </div>
+
+          <%= form.submit "Save", class: "cursor-pointer my-2 p-3 text-white font-bold rounded-md bg-gradient-to-r from-sky-400 to-blue-500" %>
+        <% end %>
+    </div>
+
+  </div>
+<div>
+
+
