@@ -8,7 +8,6 @@ class HomesController < ApplicationController
   end
 
   def create
-    byebug
     @personal_datum = PersonalDatum.new
     @personal_datum.first_name = homes_params[:first_name]
     @personal_datum.last_name = params[:last_name]
@@ -16,9 +15,13 @@ class HomesController < ApplicationController
     @personal_datum.email_address = params[:email_address]
     @personal_datum.phone_number = params[:phone_number]
 
-    if @personal_datum.save!
-      byebug
-
+    if @personal_datum.save
+      respond_to do |format|
+        format.html { redirect_to homes_path, notice: "Personal Data was successfully created." }
+        format.turbo_stream { flash.now[:notice] = "Personal Data was successfully created." }
+      end
+    else
+      redirect_to homes_path, notice: "Could not be saved"
     end
   end
 
