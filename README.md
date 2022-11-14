@@ -5,20 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+- Install Docker
+- Run docker compose build
+- Run docker compose up
+- Run docker compose run web bash in separate terminal.
+   - Run rails db:create in that separate terminal.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
