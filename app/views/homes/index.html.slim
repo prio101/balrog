@@ -1,0 +1,42 @@
+div class="flex flex-col w-full"
+
+  div class="flex flex-1 p-20 justify-center content-center min-h-72 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
+    div class="flex flex-col content-center justify-center align-middle text-center"
+      h1 class="text-3xl text-white font-medium" Balrog v0.1
+      p class="text-base text-white font-thin" This is an application with Rails 7
+
+  div class="flex flex-1 flex-col p-10 justify-start content-start"
+    = link_to "Add New", new_home_path , data: { turbo_frame: "modal" }, class: 'p-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-md flex justify-center w-40 h-auto text-white fond-bold'
+  .overflow-x-auto
+  table.min-w-full.divide-y-2.divide-gray-200.text-sm
+    thead
+      tr
+        th.whitespace-nowrap.px-4.py-2.text-left.font-medium.text-gray-900
+          |  First Name
+        th.whitespace-nowrap.px-4.py-2.text-left.font-medium.text-gray-900
+          |  Last Name
+        th.whitespace-nowrap.px-4.py-2.text-left.font-medium.text-gray-900
+          |  Nick Name
+        th.whitespace-nowrap.px-4.py-2.text-left.font-medium.text-gray-900
+          |  Phone
+        th.whitespace-nowrap.px-4.py-2.text-left.font-medium.text-gray-900
+          |  Email Address
+        th.whitespace-nowrap.px-4.py-2.text-left.font-medium.text-gray-900
+          |  Employments Number
+    tbody.divide-y.divide-gray-200
+    - if @personal_data.present?
+      - @personal_data.each do |data|
+        tr
+          td.whitespace-nowrap.px-4.py-2.font-medium.text-gray-900
+            = data.first_name
+          td.whitespace-nowrap.px-4.py-2.text-gray-700
+            = data.last_name
+          td.whitespace-nowrap.px-4.py-2.text-gray-700
+            = data.nickname
+          td.whitespace-nowrap.px-4.py-2.text-gray-700
+            = data.phone_number
+          td.whitespace-nowrap.px-4.py-2.text-gray-700
+            = data.email_address
+          td.whitespace-nowrap.px-4.py-2.text-gray-700
+            = data.employments.count
+

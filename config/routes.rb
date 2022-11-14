@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "homes#index"
+  resources :homes, only: [ :index, :new, :create ]
+  resources :employments, only: [ :index, :new, :create ]
 end

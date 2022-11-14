@@ -7,7 +7,7 @@ class CreateEmployments < ActiveRecord::Migration[7.0]
       t.datetime  :date_started
       t.datetime  :employment_ended
 
-      t.references :personal_data
+      t.references :personal_datum
       t.timestamps
     end
   end

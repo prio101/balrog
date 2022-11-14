@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PersonalDatum < ApplicationRecord
-  has_many :emplyments
+  has_many :employments
 
   validates_presence_of :first_name, :last_name, :email_address, :phone_number
   validates_length_of :first_name, maximum: 25

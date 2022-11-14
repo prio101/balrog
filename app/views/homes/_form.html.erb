@@ -1,0 +1,96 @@
+<div class="flex flex-1 flex-col">
+  <div class="absolute top-40 left-32 right-32">
+
+    <div class="p-10 bg-white rounded-md border border-slate-300 flex flex-col">
+
+        <%= form_with model: @data, url: '/homes', data: { controller: 'form', action: "submit->form#hideModalAndOpenEmploymentModal" } do |form| %>
+          <% form.hidden_field :step, value: :personal_data %>
+
+          <div class="flex flex-1 flex-col justify-center content-center m-1">
+            <%= form.label :first_name, class: 'font-semibold text-base text-gray-700 font-thin' %>
+            <%= form.text_field :first_name,
+                data: { controller: 'form',
+                        action: "keyup->form#validateFirstName",
+                        index: 0
+                      } ,
+              class: 'font-semibold text-base text-gray-700 font-thin rounded-md
+                        focus:outline-none focus:border-sky-500
+                        focus:ring-1 focus:ring-sky-500
+                        disabled:bg-slate-50
+                        disabled:text-slate-500
+                        disabled:border-slate-200
+                        disabled:shadow-none'%>
+          </div>
+
+          <p id="error-first-name" class="hidden text-red-500">Max length 25</p>
+
+
+          <div class="flex flex-1 flex-col justify-center content-center m-1">
+            <%= form.label :last_name, class: 'font-semibold text-base text-gray-700 font-thin' %>
+            <%= form.text_field :last_name, disabled: true,
+                data: { controller: 'form',
+                        action: "keyup->form#validateLastName",
+                        index: 1 },
+                class: 'font-semibold text-base text-gray-700 font-thin rounded-md
+                        focus:outline-none focus:border-sky-500
+                        focus:ring-1 focus:ring-sky-500
+                        disabled:bg-slate-50
+                        disabled:text-slate-500
+                        disabled:border-slate-200
+                        disabled:shadow-none' %>
+          </div>
+
+          <p id="error-last-name" class="hidden text-red-500">Max length 25</p>
+
+          <div class="flex flex-1 flex-col justify-center content-center m-1">
+            <%= form.label :nickname, class: 'font-semibold text-base text-gray-700 font-thin' %>
+            <%= form.text_field :nickname,
+                class: 'font-semibold text-base text-gray-700 font-thin rounded-md
+                        focus:outline-none focus:border-sky-500
+                        focus:ring-1 focus:ring-sky-500
+                        disabled:bg-slate-50
+                        disabled:text-slate-500
+                        disabled:border-slate-200
+                        disabled:shadow-none' %>
+          </div>
+
+          <div class="flex flex-1 flex-col justify-center content-center m-1">
+            <%= form.label :email_address, class: 'font-semibold text-base text-gray-700 font-thin' %>
+            <%= form.text_field :email_address, disabled: true,
+              data: { controller: 'form', action: "keyup->form#validateEmailAddress", index: 2 },
+              class: 'font-semibold text-base text-gray-700 font-thin rounded-md
+                        focus:outline-none focus:border-sky-500
+                        focus:ring-1 focus:ring-sky-500
+                        disabled:bg-slate-50
+                        disabled:text-slate-500
+                        disabled:border-slate-200
+                        disabled:shadow-none' %>
+          </div>
+
+          <p id="error-email-format" class="hidden text-red-500">Invalid Email Address</p>
+
+          <div class="flex flex-1 flex-col justify-center content-center m-1">
+            <%= form.label :phone_number, class: 'font-semibold text-base text-gray-700 font-thin' %>
+            <%= form.text_field :phone_number, disabled: true,
+                data: { controller: 'form', action: "keyup->form#validatePhoneNumber", index: 3 },
+                class: 'font-semibold text-base text-gray-700 font-thin rounded-md
+                        focus:outline-none focus:border-sky-500
+                        focus:ring-1 focus:ring-sky-500
+                        disabled:bg-slate-50
+                        disabled:text-slate-500
+                        disabled:border-slate-200
+                        disabled:shadow-none' %>
+          </div>
+
+          <p id="error-phone-format" class="hidden text-red-500">Invalid Phone Length</p>
+
+          <%= form.submit "Save", class: "cursor-pointer my-2 p-3 w-40 text-white font-bold rounded-md bg-gradient-to-r from-sky-400 to-blue-500" %>
+        <% end %>
+
+        <%= button_tag "Cancel",  data: { controller: 'form', action: "click->form#hideModal" }, class: 'cursor-pointer my-2 p-3 w-40 text-white font-bold rounded-md bg-gradient-to-r from-red-400 to-pink-500' %>
+    </div>
+
+  </div>
+<div>
+
+
